@@ -1,27 +1,27 @@
 var inquirer = require('inquirer');
 var isLetter = require('is-letter');
-//require objects/exports
+
 var Word = require('./word.js');
 var Game = require('./game.js');
-//hangman graphic
+
 var hangManDisplay = Game.newWord;
 
-//set the maxListener
+
 require('events').EventEmitter.prototype._maxListeners = 100;
 
 
 var hangman = {
   wordBank: Game.newWord.wordList,
   guessesRemaining: 10,
-  //empty array to hold letters guessed by user. And checks if the user guessed the letter already
+
   guessedLetters: [],
-  //index to display graphic
+
   display: 0,
   currentWord: null,
-  //asks user if they are ready to play
+
   startGame: function() {
     var that = this;
-    //clears guessedLetters before a new game starts if it's not already empty.
+
     if(this.guessedLetters.length > 0){
       this.guessedLetters = [];
     }
@@ -37,16 +37,16 @@ var hangman = {
         console.log("Fine, I didn't want to play anyway..");
       }
     })},
-  //if they want to play starts new game.
+  
   newGame: function() {
     if(this.guessesRemaining === 10) {
       console.log("Okay! Here we go!");
 
-      //generates random number based on the wordBank
+
       var randNum = Math.floor(Math.random()*this.wordBank.length);
       this.currentWord = new Word(this.wordBank[randNum]);
       this.currentWord.getLets();
-      //displays current word as blanks.
+
       console.log(this.currentWord.wordRender());
       this.keepPromptingUser();
     } else{
@@ -59,7 +59,7 @@ var hangman = {
   },
   keepPromptingUser : function(){
     var that = this;
-    //asks player for a letter
+
     inquirer.prompt([{
       name: "chosenLtr",
       type: "input",
