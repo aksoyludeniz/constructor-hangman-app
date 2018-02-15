@@ -1,0 +1,24 @@
+{
+  "name": "constructor-hangman-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aksoyludeniz/constructor-hangman-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aksoyludeniz/constructor-hangman-app/issues"
+  },
+  "homepage": "https://github.com/aksoyludeniz/constructor-hangman-app#readme",
+  "dependencies": {
+    "inquirer": "^5.1.0",
+    "is-letter": "^1.1.1"
+  }
+}
